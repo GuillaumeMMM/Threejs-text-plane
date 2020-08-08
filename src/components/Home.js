@@ -1,9 +1,9 @@
 import React, { Component, Suspense } from 'react';
 import { Canvas, useThree, extend } from 'react-three-fiber';
-/* import { DefaultThing } from './objects/DefaultObject';
-import { DefaultTextObject } from './objects/DefaultTextObject'; */
 import { Damier } from './objects/Damier';
 import { OrbitControls } from '../assets/orbit';
+import { TextObjectBmf } from './objects/TextObjectBmf';
+import * as THREE from 'three';
 
 extend({ OrbitControls })
 
@@ -16,7 +16,8 @@ const Scene = () => {
     return (
         <>
             <group>
-                <Damier></Damier>
+                {/* <Damier></Damier> */}
+                <TextObjectBmf></TextObjectBmf>
             </group>
             <orbitControls args={[camera, domElement]} />
         </>
@@ -29,11 +30,11 @@ class Home extends Component {
         return (
             <div className="home-container">
                 <div className="canvas-container">
-                    <Canvas gl={{ antialias: false, alpha: false }} camera={{ position: [0, 0, 15] }} onCreated={({ gl }) => gl.setClearColor('lightpink')}>
-                        <Suspense fallback={null}>
+                        <Canvas gl={{ antialias: true, alpha: false }} camera={{ position: [0, 0, 10] }} onCreated={({ gl }) => gl.setClearColor('lightpink')}>
+                            <Suspense fallback={null}>
                             <Scene></Scene>
-                        </Suspense>
-                    </Canvas>
+                            </Suspense>
+                        </Canvas>
                 </div>
             </div>
         );

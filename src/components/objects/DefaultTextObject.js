@@ -145,7 +145,7 @@ export function DefaultTextObject() {
             <group>
                 <mesh ref={ref}>
                 <pointLight position={[0, 0, 0]} />
-                    <textGeometry attach="geometry" position={[0, 0, 0]} args={['Hello', config]} />
+                    {/* <textGeometry attach="geometry" position={[0, 0, 0]} args={['Hello', config]} /> */}
                     <shaderMaterial attach="material" transparent {...data} />
                 </mesh>
             </group>
